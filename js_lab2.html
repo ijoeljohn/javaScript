@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js_lab2.html</title>
+     <script>
+        function validation()
+        {
+            var name = document.forms.Regform.Name.value;
+            var email = document.forms.Regform.Email.value;
+            var phone = document.forms.Regform.Telephone.value;
+            var password = document.forms.Regform.Password.value;
+            var regEmail=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/g;
+            
+            
+            if (name==null || name=="" || email==null || phone==null || password==null){  
+                window.alert("feilds can't be blank");  
+                return false;  
+            }
+            if (name.length <3){
+                window.alert("min length is 3");
+                name.focus();
+                return false
+            }
+            if (name == Number){
+                window.alert("enter correct name");
+                name.focus();
+                return false
+            }
+            if (phone.length <10){
+                window.alert("enter correct number");
+                phone.focus();
+                return false  
+            }
+            if (password.length <6){
+                window.alert("min length is 6");
+                password.focus();
+                return false
+            }
+            if (email == "" || !regEmail.test(email)) {
+                    window.alert("Please enter a valid e-mail address.");
+                    email.focus();
+                    return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h1>signupform</h1>
+    <form action="" onsubmit="return validation()" method="post" name="Regform">
+    <p>Name: <input type="text" size="65" name="Name" ></p><br>
+    <p>Email: <input type="text" size="65" name="Email"></p><br>
+    <p>Telephone: <input type="text" size="65" name="Telephone"></p><br>
+    <p>Password: <input type="text" size="62" name="Password"></p><br>
+    <p>
+        <input type="submit" value="send" name="Submit" />
+    </p>
+</form>
+   
+</body>
+</html>

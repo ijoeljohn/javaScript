@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js_lab1</title>
+</head>
+<body>
+    <h1> calculator </h1>
+    <div class="form">
+        <form name="form">
+            <input type="text" id="num1" placeholder="enter the 1st value"> <br>
+            <input type="text" id="num2" placeholder="enter the 2nd value"><br>
+            <label for="value">Enter operator to perform the calculation</label>
+            <select  id="calculator" name="calculator" >
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="/">/</option>
+                <option value="*">*</option>
+            </select><br>
+            <input type="button" onclick="calcValues()" value="submit" style="width:50px;"><br>
+            <input type="text" id="result" placeholder="answer">
+        </form>
+
+    </div>
+    <script>
+      function calcValues() {
+       var num1 = parseInt(document.getElementById("num1").value);
+       var num2 = parseInt(document.getElementById("num2").value);
+       var calculator = document.getElementById("calculator").value;
+      
+        if (calculator === '+'){
+           document.getElementById("result").value=num1+num2;
+        }
+        else if(calculator === '-'){
+            document.getElementById("result").value=num1-num2;
+        }
+        else if (calculator === '*'){
+            document.getElementById("result").value=num1*num2;
+        }
+        else{
+            document.getElementById("result").value=num1/num2;
+        }
+       
+    }
+         
+    </script>
+</body>
+</html>
